@@ -98,7 +98,7 @@ export default function Dashboard() {
 
         {/* 🌟 Header */}
         <div className="flex flex-col sm:flex-row justify-between items-center mb-8 gap-4">
-          <h1 className="text-5xl font-extrabold uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-200">
+          <h1 className="text-4xl sm:text-5xl font-extrabold uppercase tracking-wide text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-500 to-red-200">
             BlogShare
           </h1>
 
@@ -133,8 +133,8 @@ export default function Dashboard() {
             value={blog}
             onChange={(e) => setBlog(e.target.value)}
             placeholder="Write your blog..."
-            rows={4}
-            className="w-full p-3 rounded-xl border border-zinc-600 mb-4 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-black text-white placeholder:text-zinc-400"
+            rows={6}
+            className="w-full p-3 rounded-xl border border-zinc-600 mb-4 focus:outline-none focus:ring-2 focus:ring-purple-500 bg-black text-white placeholder:text-zinc-400 resize-y min-h-[150px] max-h-[500px]"
           />
           <button
             type="submit"
