@@ -8,6 +8,7 @@
 extra
 test.txt
 blogshare-server/node_modules
+blogshare-server/.env
 blogshare-client/node_modules
 /node_modules
 
