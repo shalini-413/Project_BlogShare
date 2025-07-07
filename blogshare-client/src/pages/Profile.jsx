@@ -3,7 +3,7 @@ import { getBlogs, deleteBlog, deleteComment } from "../services/api";
 
 const checkHateSpeech = async (text) => {
   try {
-    const res = await fetch("http://localhost:8000/predict", {
+    const res = await fetch(`${import.meta.env.VITE_AI_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),

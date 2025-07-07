@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: `${import.meta.env.VITE_EXPRESS_URL}/api`,
   withCredentials: true,
 });
 export const registerUser = (data) => API.post("/auth/register", data);

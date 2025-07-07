@@ -2,7 +2,7 @@ import axios from "axios";
 
 export const checkHateSpeech = async (text) => {
   try {
-    const res = await axios.post("http://localhost:8000/predict", {
+    const res = await axios.post(import.meta.env.VITE_AI_URL, {
       text,
     });
     return res.data; // { cleaned_text, prediction, probabilities }
