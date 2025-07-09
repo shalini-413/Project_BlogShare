@@ -7,6 +7,7 @@ const checkHateSpeech = async (text) => {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ text }),
+      credentials: "include",
     });
     const data = await res.json();
     const flagged = data.prediction === "Hate Speech";
