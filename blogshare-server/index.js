@@ -20,13 +20,6 @@ app.use(express.json());
 app.use(cookieParser());
 
 
-app.use(cors({
-  origin: "https://project-blog-share.vercel.app",
-  credentials: true            
-}));
-
-
-
 app.get("/", (req, res) => res.send("Welcome to the blogShare API"));
 app.use("/api/auth", authRoutes);
 app.use("/api/blogs", blogRoutes);

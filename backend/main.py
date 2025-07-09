@@ -25,6 +25,8 @@ from nltk.corpus import stopwords
 from pydub import AudioSegment
 from tempfile import NamedTemporaryFile
 import speech_recognition as sr
+from fastapi.responses import JSONResponse
+from fastapi.requests import Request
 
 app = FastAPI()
 
@@ -37,6 +39,12 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+
+@app.options("/{rest_of_path:path}")
+async def preflight_handler(request: Request, rest_of_path: str):
+    print("⚠️ Received preflight for:", rest_of_path)
+    return JSONResponse(status_code=200, content={})
 
 stop_words = set(stopwords.words('english'))
 
